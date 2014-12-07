@@ -1,10 +1,10 @@
 ## Getting full dataset
-allData <- read.csv("./Data/household_power_consumption.txt", header=T, sep=';', na.strings="?", 
+allData <- read.csv("household_power_consumption.txt", header=T, sep=';', na.strings="?", 
                       nrows=2075259, check.names=F, stringsAsFactors=F, comment.char="", quote='\"')
 allData$Date <- as.Date(allData$Date, format="%d/%m/%Y")
 
 ## Subsetting the data
-data <- subset(allData, subset=(Date >= "2007-02-01" & Date <= "2007-02-02"))
+allData <- subset(allData, subset=(Date >= "2007-02-01" & Date <= "2007-02-02"))
 rm(allData)
 
 ## Converting dates
